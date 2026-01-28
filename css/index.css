@@ -1,0 +1,49 @@
+
+body{
+  background-color: pink;
+  color: brown;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: auto;
+}
+
+
+h1,  #About{
+  text-align: center;
+}
+
+#main-name{
+  font-size: 3em;
+  font-style: italic;
+}
+
+.header{
+  text-align: center;
+  font-size: 2em;
+  font-weight: 650;
+  color: #660033;
+}
+
+#fresa{
+  max-width: 20%;
+  height: 20%;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+#About, #Experience, #Connect{
+  border: 2px solid #CC6600;
+  padding: 50px, 50px;
+  margin: 75px;
+}
+
+#experience-list{
+  list-style-type: none;
+  padding: 10;
+  margin: 10;
+  display: grid;
+  gap: 0.5rem;
+}
+
+#connect-list{
+  list-style-type: circle;
+}

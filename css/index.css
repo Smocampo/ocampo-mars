@@ -1,5 +1,7 @@
-main{
+*{
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body{
@@ -22,17 +24,18 @@ body{
 }
 
 .container{
+  position: sticky;
   border: 5px solid salmon;
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   justify-content: space-around;
   list-style-type: none;
 }
 
 
-@media all and (max-width: 600px) {
+/*@media all and (max-width: 600px) {
   .container {
     flex-wrap: wrap;
   }
@@ -40,7 +43,7 @@ body{
     flex: 1 1 50%;
   }
   
-}
+}*/
 
 #main-name{
   font-size: 3em;
@@ -66,8 +69,10 @@ body{
   background-color:#ffe6f2;
   list-style-type: none;
   padding: 15px;
-  margin: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
   display: flex;
+  flex-wrap:wrap;
   flex-direction: column;
   gap: 0.5rem;
 }
@@ -81,10 +86,12 @@ body{
 }
 
 
-#connect-list{
+#connect ul{
+  display: grid; 
+  grid-template-columns: 1fr;
+  gap: 15px;
+  padding: 0;
   list-style-type: circle;
-  display:flex;
-  justify-content: space-around;
 }
 
 a {
@@ -98,4 +105,56 @@ a hover{
   background: #660033;
   padding: 5px 10px;
   border-radius: 5px;
+}
+
+
+/* mobile set up */
+
+@media (max-width: 400px) {
+  h1{
+    font-size: 0.75em;
+    margin-top: 1.5rem;
+  }
+  header nav ul{
+    gap: 0.25rem;
+  }
+}
+
+/*   tablet set up */
+
+@media (min-width: 401px){
+  .container {
+    flex-wrap: wrap;
+  }
+  .container > li {
+    flex: 1 1 50%;
+  }
+  h1{
+    font-size: 2.5em;
+    color:slateblue;
+    margin-top: 3rem;
+  }
+  header nav ul{
+    gap: .5rem;
+  }
+  #connect ul{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    justify-content: center;
+  }
+}
+
+
+/*   desktop set up */
+@media (min-width: 700px){
+  h1{
+    font-size: 3.5rem;
+    color:rgb(196, 18, 160);
+    margin-top: 3.5rem; 
+  }
+  #connect ul{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+  }
 }

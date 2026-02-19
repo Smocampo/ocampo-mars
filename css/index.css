@@ -1,6 +1,5 @@
 *{
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -11,19 +10,65 @@ body{
   margin: auto;
 }
 
-
-#About{
+h1{
+  font-size: 3em;
+  font-style: italic;
   text-align: center;
+  font-weight: 700;
+  margin-top: 3rem;
 }
 
-.header{
+h2{
   text-align: center;
+  
+}
+
+section{
+  padding: 2.5rem;
+  margin: 1.25rem auto;
+  max-width: 90%;
+  border: 2px solid #CC6600;
+  border-radius: 0.5rem;
+}
+
+
+/* HEADER SECTION */
+header{
+  position: sticky; 
+  top: 0;
+  text-align: space-evenly;
   font-size: 2em;
   font-weight: 650;
   color: #660033;
 }
 
-.container{
+header nav ul{
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 1rem;
+
+}
+
+header nav li{
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+header nav a{
+  text-decoration: none;
+  color: blueviolet;
+  font-weight: bold;
+}
+
+header nav a:hover{
+  color: aliceblue;
+}
+
+
+/* .container{
   position: sticky;
   border: 5px solid salmon;
   display: flex;
@@ -32,7 +77,7 @@ body{
   padding: 0px;
   justify-content: space-around;
   list-style-type: none;
-}
+} */
 
 
 /*@media all and (max-width: 600px) {
@@ -45,12 +90,13 @@ body{
   
 }*/
 
-#main-name{
-  font-size: 3em;
-  font-style: italic;
+
+
+/* ABOUT SECTION */
+
+#About{
   text-align: center;
 }
-
 
 #fresa{
   max-width: 20%;
@@ -59,8 +105,15 @@ body{
   object-fit: contain;
 }
 
-#Experience, #Connect{
-  border: 2px solid #CC6600;
+#fresa [alt]{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*EXPERIENCE SECTION */
+
+#Experience{
   padding: 50px;
   margin: 75px;
 }
@@ -77,6 +130,10 @@ body{
   gap: 0.5rem;
 }
 
+#experience-list li{
+  padding: 15px;
+}
+
 .e-list{
   margin: 0;
 }
@@ -86,23 +143,59 @@ body{
 }
 
 
-#connect ul{
+/* SKILLS SECTION */
+#Skills{
+  margin: 75px;
+  padding: 50px;
+}
+
+#Skills ul{
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+#Skills li{
+  font-size: medium;
+  background-color:#ffe6f2;
+  padding: 0.5rem 1rem;
+}
+
+
+/*PROJECT SECTION*/ 
+#Projects{
+  margin: 75px;
+  padding: 50px;
+}
+
+/*CONNECT SECTION */
+
+#Connect{
+  padding: 50px;
+  margin: 75px;
+}
+
+#Connect ul {
   display: grid; 
   grid-template-columns: 1fr;
-  gap: 15px;
+  gap: 0.75rem;
   padding: 0;
   list-style-type: circle;
 }
 
-a {
+#Connect a {
   color: #660033;
   text-decoration: none;
   font-weight: bold;
+  display: inline-block;
+  margin-bottom: 0.6rem;
 }
 
-a hover{
+#Connect a hover{
   color: white;
-  background: #660033;
   padding: 5px 10px;
   border-radius: 5px;
 }

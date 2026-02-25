@@ -38,7 +38,9 @@ section{
 header{
   position: sticky; 
   top: 0;
-  text-align: space-evenly;
+  justify-content: space-evenly;
+  background: #ffeeee;
+  z-index: 1000;
   font-size: 2em;
   font-weight: 650;
   color: #660033;
@@ -172,6 +174,21 @@ header nav a:hover{
 #Projects{
   margin: 75px;
   padding: 50px;
+}
+
+#Projects ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+#Projects li{
+  font-size: medium;
+  background-color: #ffe6f2;
+  padding: 0.5rem 1rem;
 }
 
 /*CONNECT SECTION */

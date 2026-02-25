@@ -54,7 +54,44 @@ for (let i = 0; i < skills.length; i++) {
   skill.innerText = skills[i];
   //append li to skills list
   skillsList.appendChild(skill);
-}
+};
+
+
+// PROJECT SECTION
+
+//fetch github
+fetch("https://api.github.com/users/Smocampo/repos")
+  .then(function(response){
+    //return as json
+    return response.json();
+  })
+  .then(function(repositories) {
+    //print out reponse
+    console.log("Repositiories:", repositories);
+
+
+    //code to get the project section
+    const projectSection = document.getElementById("Projects");
+    const projectList = projectSection.querySelector("ul");
+
+
+    //create a loop
+    for (let i=0; i < repositories.length; i++){
+      const project = document.createElement("li");
+
+      project.innerText = repositories[i].name;
+
+      projectList.appendChild(project);
+    }
+  })
+
+  //error message
+  .catch(function(error){
+    console.error("Error Fetching Repositiories:", error);
+
+    const projectSection = document.getElementById("Projects");
+    projectSection.innerHTML += "<p>Unable to load projects at this time</p>"
+  })
 
 
 //Message Form-----
@@ -103,8 +140,16 @@ messageForm.addEventListener("submit", function(event) {
   //create new list message item
   const newMessage = document.createElement("li");
 
+  const link = document.createElement("a");
+  link.href = `mailto:${userEmail}`;
+  link.textContent = userName;
+
+  const span = document.createElement("span");
+  span.textContent = `: ${userMessage}`;
+
+  newMessage.append(link, span);
   //set the innerHTML
-  newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a>: <span>${userMessage}</span>`;
+ // newMessage.innerHTML = `<a href="mailto:${userEmail}">${userName}</a>: <span>${userMessage}</span>`; 
 
   //create edit button
   const editButton = document.createElement("button");
